@@ -6,13 +6,13 @@ topics: ["Transformer", "Attention"]
 published: true
 ---
 
-## 1. はじめに
+# 1. はじめに
 
 Transformerの構成要素のうち、特にmulti-head attentionを中心に理解する。Attention is all you need論文で紹介されている式について、そのイメージと合わせて解説する。
 
-## 2. 時代背景と問題設定
+# 2. 時代背景と問題設定
 
-### 2.1 Sequence-to-Sequence モデルの限界
+## 2.1 Sequence-to-Sequence モデルの限界
 
 RNNベースのモデルには以下の本質的な課題があった：
 
@@ -34,7 +34,7 @@ $$
 \frac{\partial L}{\partial h_t} = ∏_{i=t}^T \frac{\partial h_{i+1}}{\partial h_i}
 $$
 
-### 2.2 解決すべき課題
+## 2.2 解決すべき課題
 
 Transformerは以下の要件を満たす必要があった：
 
@@ -42,9 +42,9 @@ Transformerは以下の要件を満たす必要があった：
 2. 任意の距離の依存関係を直接モデル化
 3. 系列における位置情報の保持
 
-## 3. Transformerのアーキテクチャ概観
+# 3. Transformerのアーキテクチャ概観
 
-### 3.1 全体構造
+## 3.1 全体構造
 
 Transformerは以下の主要コンポーネントで構成されている：
 
@@ -61,7 +61,7 @@ Transformerは以下の主要コンポーネントで構成されている：
    - Layer Normalization
    - Residual Connection
 
-### 3.2 各レイヤーの数学的表現
+## 3.2 各レイヤーの数学的表現
 
 Layer Normalization:
 
@@ -78,9 +78,9 @@ $$
 FFN(x) = max(0, xW_1 + b_1)W_2 + b_2
 $$
 
-## 4. Positional Encodingの数理
+# 4. Positional Encodingの数理
 
-### 4.1 位置情報の表現方法
+## 4.1 位置情報の表現方法
 
 Transformerは位置情報を以下の式で表現します：
 
@@ -98,7 +98,7 @@ $$
 2. 相対位置の計算が容易
 3. 任意の長さの系列に対応可能
 
-### 4.2 実装と性質
+## 4.2 実装と性質
 
 位置エンコーディングは入力埋め込みに加算されます：
 
@@ -106,9 +106,9 @@ $$
 Input = WordEmbedding + PositionalEncoding
 $$
 
-## 5. Attention Mechanismの数理
+# 5. Attention Mechanismの数理
 
-### 5.1 Scaled Dot-Product Attention
+## 5.1 Scaled Dot-Product Attention
 
 #### 基本式
 
@@ -202,7 +202,7 @@ $$
 アーキテクチャの図を見ると、$Q$にも$K$にも$V$にも同じ入力が入っている。
 $Q$はクエリ行列だから入力がそのまま入るのは納得だが、$K$も$V$も入力そのままでは何の意味もなさそう。**
 
-### 5.2 Multi-Head Attention
+## 5.2 Multi-Head Attention
 
 #### 基本式
 
@@ -240,5 +240,5 @@ $$
 
 これらを統合することで、豊かな文脈情報を得る。
 
-## 6. まとめ
+# 6. まとめ
 LLMのベース技術であるTransformerの数式を分解し、そのイメージと共に解説した。
