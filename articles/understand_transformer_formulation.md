@@ -1,4 +1,10 @@
-# Transformerを数式から理解する
+---
+title: Transformerを数式から理解する
+emoji: "🔍"
+type: "tech"
+topics: ["Transformer", "Attention"]
+published: true
+---
 
 ## 1. はじめに
 
