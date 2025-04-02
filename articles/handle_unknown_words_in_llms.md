@@ -1,5 +1,5 @@
 ---
-title: LLMにおける未知語への対処
+title: LLMにおける未知語への対処〜「麺」はなぜ2バイトと1バイトに分割されるか〜
 emoji: "🧩"
 type: "tech"
 topics: ["機械学習", "NLP", "LLM", "トークナイザー", "BPE"]
