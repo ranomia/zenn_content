@@ -64,5 +64,17 @@ $$
 $$
 
 $$
-\mathrm{Attention} (\bm{Q}, \bm{K}, \bm{V})
+\mathrm{Attention} (\bm{Q}, \bm{K}, \bm{V})_m = 
+\frac{\Sigma_{n=1}^{N} \mathrm{sim} (\bm{q}_m, \bm{k}_n) \bm{v}_n}{\Sigma_{n=1}^{N} \mathrm{sim} (\bm{q}_m, \bm{k}_n)} \\
+\mathrm{where} \mathrm{sim} (\bm{q}_m, \bm{k}_n) = \mathrm{exp} (\bm{q}_{m}^{\mathsf{T}} \bm{k}_n / \sqrt{d})
+$$
+
+$$
+\mathrm{Attention} (\bm{Q}, \bm{K}, \bm{V})_m = 
+\frac{\Sigma_{n=1}^{N} \phi (\bm{q}_m)^{\mathsf{T}} \varphi (\bm{k}_n) \bm{v}_n}{\Sigma_{n=1}^{N} \phi (\bm{q}_m)^{\mathsf{T}} \varphi (\bm{k}_n)}
+$$
+
+$$
+\mathrm{Attention} (\bm{Q}, \bm{K}, \bm{V})_m = 
+\frac{\Sigma_{n=1}^{N} (\bm{R}_{\Theta, m}^{d} \phi (\bm{q}_m))^\mathsf{T} (\bm{R}_{\Theta, n}^{d} \varphi (\bm{k}_n)) \bm{v}_n}{\Sigma_{n=1}^{N} \phi (\bm{q}_m)^{\mathsf{T}} \varphi (\bm{k}_n)}
 $$
