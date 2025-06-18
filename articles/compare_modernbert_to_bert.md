@@ -46,8 +46,7 @@ JcommonsenseQAは、一般常識に対する推論能力を評価するための
 | weight avg | 0.83 | 0.83 | 0.83 | 1119 |
 
 ### ModernBERT（SB Intuitions）
-|  | precision | recall | 
-f1-score | support |
+|  | precision | recall | f1-score | support |
 | ---- | ---: | ---: | ---: | ---: |
 | label 0 | 0.92 | 0.92 | 0.92 | 216 |
 | label 1 | 0.91 | 0.90 | 0.91 | 237 |
