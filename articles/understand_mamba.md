@@ -14,6 +14,9 @@ published: false
 
 Transformerの計算量がシーケンス長に対して二次的に増加するのに対し、Mambaは線形時間で処理可能という大きなアドバンテージがある。この効率性の秘密を数式レベルで理解することで、なぜMambaが長文処理に優れているのかが明確にしたい。
 
+**注釈：** 本記事は以下の論文を参照している：  
+Gu, A., & Dao, T. (2023). *Mamba: Linear-Time Sequence Modeling with Selective State Spaces*. arXiv preprint arXiv:2312.00752.
+
 # 2. State Space Model(SSM)とは
 
 State Space Model（状態空間モデル）は、システムの内部状態を数学的に表現する手法である。SSMは以下の2つの方程式で定義される：
