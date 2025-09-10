@@ -95,7 +95,7 @@ A_{nk} =
 n+1 & \text{if } n=k, \\
 0 & \text{if } n<k
 \end{cases}
-> $$
+$$
 
 # 2. Structured State Space Model (S4 Model)
 
@@ -191,8 +191,7 @@ $$
 \begin{align*}
 g_t &= \sigma (\mathrm{Linear}(x_t)) \\
 h_t &= (1-g_t)h_{t-1} + g_t x_t
-\end{align*}
-> $$
+\end{align*} $$
 > 
 > "um"のようなフィラーの英単語は、 $g_t=0$ でフィルター可能となる。
 
