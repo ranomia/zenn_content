@@ -89,12 +89,12 @@ $$
 > Aの形状を以下に指定するHiPPOフレームワークを用いることで、上記問題を解消。
 > 
 > $$
-> A_{nk} = 
-> \begin{cases}
-> (2n+1)^{\frac{1}{2}} (2k+1)^{\frac{1}{2}} & \text{if } n>k, \\
-> n+1 & \text{if } n=k, \\
-> 0 & \text{if } n<k
-> \end{cases}
+A_{nk} = 
+\begin{cases}
+(2n+1)^{\frac{1}{2}} (2k+1)^{\frac{1}{2}} & \text{if } n>k, \\
+n+1 & \text{if } n=k, \\
+0 & \text{if } n<k
+\end{cases}
 > $$
 
 # 2. Structured State Space Model (S4 Model)
@@ -188,10 +188,10 @@ $$
 > $N=1, A=-1, B=1, s_\Delta=\mathrm{Linear}(x), \tau_\Delta=\mathrm{softplus}$の時、Selective SSMは次のような形になる。
 > 
 > $$
-> \begin{align*}
-> g_t &= \sigma (\mathrm{Linear}(x_t)) \\
-> h_t &= (1-g_t)h_{t-1} + g_t x_t
-> \end{align*}
+\begin{align*}
+g_t &= \sigma (\mathrm{Linear}(x_t)) \\
+h_t &= (1-g_t)h_{t-1} + g_t x_t
+\end{align*}
 > $$
 > 
 > "um"のようなフィラーの英単語は、 $g_t=0$ でフィルター可能となる。
