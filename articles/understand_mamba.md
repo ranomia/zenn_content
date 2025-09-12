@@ -1,5 +1,5 @@
 ---
-title: Mambaを数式から理解する
+title: 状態空間モデルからMambaまでの流れを理解する
 emoji: "🔍"
 type: "tech"
 topics: ["Mamba", "SSM"]
@@ -18,6 +18,8 @@ Transformerの計算量がシーケンス長に対して二次的に増加する
 Gu, A., & Dao, T. (2023). *Mamba: Linear-Time Sequence Modeling with Selective State Spaces*. arXiv preprint arXiv:2312.00752.
 
 Gu, A., Goel, K., & Re, C. (2022). *Efficiently Modeling Long Sequences with Structured State Spaces*. arXiv preprint arXiv:2111.00396.
+
+Gu, A., Johnson, I., Goel, L., Saab, K., Dao, T., Rudra, A., & Re, C. (2021). *Combining Recurrent, Convolutional, and Continuous-time Models with Linear State-Space Layers*. arXiv preprint arXiv:2110.13985.
 
 # 0. 時系列モデリングの本質的課題: LRDs
 時系列モデリングにおいて、**Long-range dependences(LRDs)を含むデータの扱い**がしばしば問題になる。
@@ -77,6 +79,7 @@ LSSLは状態次元 $N$ 、シーケンス長 $L$ に対して、潜在状態の
 
 離散状態空間モデルでは、状態行列が以下の表現となり、これは $A$ を反復的に乗算することに等しい。
 そのため、$A$の形状次第で、勾配が消失・発散する可能性が高い。
+
 $$
 \begin{align*}
 \bar{A} &= \mathrm{exp}(\Delta A) \\
@@ -159,7 +162,9 @@ S4（及びSSM）は、一定のダイナミクス(すなわち $\bar{A}, \bar{B
 
 選択メカニズムをモデルに組み込む方法の一つは、シーケンスに沿った相互作用に影響を与えるパラメータ(例えば、RNNのリカレントダイナミクスやCNNの畳み込みカーネル)を入力依存にすることである。
 
-そこで、Selective SSMでは
+そこで、Selective SSMでは、「選択性(Selectivity)」を意識した手法が提案された。
+
+選択性とはコンテキストを意識するための能力であり、これによって各入力に対する注目／無視をつかさどる。
 
 
 ## 3-1. Selective SSMの概要
@@ -216,11 +221,6 @@ $\Delta$は、現在の入力$x_t$をどれだけ注目／無視するかを制�
 # 4. その他備忘
 
 ## FAQ
-
-### Q. 状態更新の数式変形がわからない
-
-**A.** 詳細な数式変形については以下の資料を参照：
-https://hyaguchi947d.github.io/pdf/discretization.pdf
 
 ### Q. Mambaのデータの次元がわからない
 
