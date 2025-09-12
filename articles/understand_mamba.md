@@ -3,7 +3,7 @@ title: Mambaに潜む工夫を理解する
 emoji: "🔍"
 type: "tech"
 topics: ["Mamba", "SSM"]
-published: false
+published: true
 ---
 
 # はじめに
