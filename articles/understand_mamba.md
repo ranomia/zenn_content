@@ -1,5 +1,5 @@
 ---
-title: 状態空間モデルからMambaまでの流れを理解する
+title: Mambaに潜む工夫を理解する
 emoji: "🔍"
 type: "tech"
 topics: ["Mamba", "SSM"]
@@ -10,7 +10,7 @@ published: false
 
 近年、Transformer以外のアーキテクチャが注目を集める中、**Mamba**は特に有望な選択肢として登場した。MambaはState Space Model（SSM）をベースとした新しいアーキテクチャで、長いシーケンスを効率的に処理できる特徴を持つ。
 
-本記事では、Mambaの核となる数学的原理を段階的に解説する。まず基本的なState Space Modelから始まり、Selective SSMの概念、そして最終的にMambaアーキテクチャの全体像まで、数式を用いて詳しく説明する。
+本記事では、状態空間モデル層→S4→Selective SSM(Mamba)と手法が発展した流れをざっくりと解説する。
 
 Transformerの計算量がシーケンス長に対して二次的に増加するのに対し、Mambaは線形時間で処理可能という大きなアドバンテージがある。この効率性の秘密を数式レベルで理解することで、なぜMambaが長文処理に優れているのかが明確にしたい。
 
